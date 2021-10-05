@@ -1,12 +1,107 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Merriweather&family=Montserrat&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'home/style.css' %}">
+  <link rel="stylesheet" href="{% static 'base/base.css' %}">
 </head>
 <body>
+  <div class="container">
+    <div class="s1">
+      <div class="hero-section">
+        <img src="{% static 'home/imgs/lake.png' %}" alt="Lake" class="hero">
+
+        <h1 class="hero-title">Annie’s World</h1>
+        <h3 class="hero-sub">My Personal Blog On Bangladesh</h3>
+
+        <hr class="hero-line">
+      </div>
+
+      <nav>
+        <div class="navigation">
+          <ul class="nav-links">
+            <a href="{% url 'index' %}"><li class="home">HOME</li></a>
+            <a href=""><li class="about">ABOUT US</li></a>
+            <a href=""><li class="blog">BLOG</li></a>
+            <a href=""><li class="contact">CONTACT</li></a>
+          </ul>
   
+          <ul class="nav-socials">
+            <a href=""><img src="{% static 'base/imgs/twitter.svg' %}" alt="Twitter" class="twitter"></a>
+            <a href=""><img src="{% static 'base/imgs/youtube.svg' %}" alt="youtube" class="youtube"></a>
+            <a href=""><img src="{% static 'base/imgs/insta.svg' %}" alt="insta" class="insta"></a>
+          </ul>
+        </div>
+  
+        <div class="nav-dropdown">
+          <div>
+            <a href="{% url 'index' %}"><li class="home">HOME</li></a>
+            <a href=""><li class="about">ABOUT US</li></a>
+            <a href=""><li class="blog">BLOG</li></a>
+            <a href=""><li class="contact">CONTACT</li></a>
+
+            <div class="p-nav-socials">
+            <a href=""><img src="{% static 'base/imgs/twitter.svg' %}" alt="Twitter" class="twitter"></a>
+            <a href=""><img src="{% static 'base/imgs/youtube.svg' %}" alt="youtube" class="youtube"></a>
+            <a href=""><img src="{% static 'base/imgs/insta.svg' %}" alt="insta" class="insta"></a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="phone-navigation">
+          <img src="{% static 'base/imgs/hamburger.svg' %}" alt="Hamburger" class="hamburger">
+        </div>
+      </nav>
+    </div>
+
+    <div class="s2">
+      <div class="blogs">
+        <!-- Blog 1 -->
+        <div class="blog">
+          <img src="{% static 'home/imgs/food.png' %}" alt="Blog" class="blog-img">
+
+          <h2 class="blog-title">tristique nulla aliquet enim tortor at auctor</h2>
+
+          <p class="blog-text">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum, morbi tempus urna nisl mollis sed erat, integer blandit.</p>
+
+          <a href="" class="blog-link">Read More</a>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="blog">
+          <img src="{% static 'home/imgs/food.png' %}" alt="Blog" class="blog-img">
+
+          <h2 class="blog-title">tristique nulla aliquet enim tortor at auctor</h2>
+
+          <p class="blog-text">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum, morbi tempus urna nisl mollis sed erat, integer blandit.</p>
+
+          <a href="" class="blog-link">Read More</a>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="blog">
+          <img src="{% static 'home/imgs/food.png' %}" alt="Blog" class="blog-img">
+
+          <h2 class="blog-title">tristique nulla aliquet enim tortor at auctor</h2>
+
+          <p class="blog-text">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum, morbi tempus urna nisl mollis sed erat, integer blandit.</p>
+
+          <a href="" class="blog-link">Read More</a>
+        </div>
+      </div>
+
+      <button class="s2-btn">More Blogs</button>
+    </div>
+  </div>
+
+  <script src="{% static 'base/base.js' %}"></script>
 </body>
 </html>

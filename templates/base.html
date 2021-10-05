@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block head %}
+  <title>Add Block</title>
+  {% endblock %}
+  <link rel="stylesheet" href="{% static 'base/base.css' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Merriweather&family=Montserrat&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="base-container">
+    <nav>
+      <div class="navigation">
+        <ul class="nav-links">
+          <a href="{% url 'index' %}"><li class="home">HOME</li></a>
+          <a href=""><li class="about">ABOUT US</li></a>
+          <a href=""><li class="blog">BLOG</li></a>
+          <a href=""><li class="contact">CONTACT</li></a>
+        </ul>
+
+        <ul class="nav-socials">
+          <a href=""><img src="{% static 'base/imgs/twitter.svg' %}" alt="Twitter" class="twitter"></a>
+          <a href=""><img src="{% static 'base/imgs/youtube.svg' %}" alt="youtube" class="youtube"></a>
+          <a href=""><img src="{% static 'base/imgs/insta.svg' %}" alt="insta" class="insta"></a>
+        </ul>
+      </div>
+
+      <div class="nav-dropdown">
+        <div>
+          <a href="{% url 'index' %}"><li class="home">HOME</li></a>
+          <a href=""><li class="about">ABOUT US</li></a>
+          <a href=""><li class="blog">BLOG</li></a>
+          <a href=""><li class="contact">CONTACT</li></a>
+
+          <div class="p-nav-socials">
+          <a href=""><img src="{% static 'base/imgs/twitter.svg' %}" alt="Twitter" class="twitter"></a>
+          <a href=""><img src="{% static 'base/imgs/youtube.svg' %}" alt="youtube" class="youtube"></a>
+          <a href=""><img src="{% static 'base/imgs/insta.svg' %}" alt="insta" class="insta"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-navigation">
+        <img src="{% static 'base/imgs/hamburger.svg' %}" alt="Hamburger" class="hamburger">
+      </div>
+    </nav>
+  </div>
+
+  {% block content %}
+    ADD Content Block
+  {% endblock %}
+
+  <script src="{% static 'base/base.js' %}"></script>
+</body>
+</html>
