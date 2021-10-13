@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block head %}
+  <title>Blog Detail</title>
+  <link rel="stylesheet" href="{% static 'blog/blog_detail.css' %}">
+  {% endblock %}
+</head>
+<body>
+  {% block content %}
+    <div class="container">
+      <div class="s1">
+        <h3 class="blog-title">{{ object.title }}</h3>
+        <div class="date">
+          <img src="{% static 'blog/imgs/calendar.svg' %}" alt="Calender" class="calender">
+          <p class="blog-date">{{ object.date }}</p>
+        </div>
+
+        <img src="{{ object.image.url }}" alt="Blog-image" class="blog-image">
+
+        <div class="views">
+          <img src="{% static 'blog/imgs/visibility.svg' %}" alt="Eye" class="eye">
+          <p class="blog-views">{{ object.views }}</p>
+        </div>
+
+        <p class="blog-par">{{ object.par1 }}</p>
+        <p class="blog-par bp-2">{{ object.par2 }}</p>
+
+        {% if object.image2 %}
+          <img src="{{ object.image2.url }}" alt="Image 2" class="blog-image-2">
+        {% endif %}
+
+        {% if object.par3 %}
+          <p class="blog-par bp-3">{{ object.par3 }}</p>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+</body>
+</html>
