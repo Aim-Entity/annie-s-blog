@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import FavouriteBlog, News
 
-# Register your models here.
+admin.site.register(FavouriteBlog)
+admin.site.register(News)

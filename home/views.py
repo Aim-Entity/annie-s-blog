@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from blog_list.models import Blog
 
 
 def index(request):

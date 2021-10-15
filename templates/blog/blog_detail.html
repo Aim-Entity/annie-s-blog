@@ -40,6 +40,20 @@
         {% endif %}
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+      axios.defaults.xsrfCookieName = 'csrftoken';
+      axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+
+      let name = window.location.pathname.split("/")[3]
+      console.log(name)
+
+      document.addEventListener('DOMContentLoaded', async () => {
+        const res = await axios.post('/blogs/update_views/', {name:name})
+      });
+    </script>
   {% endblock %}
 </body>
 </html>
