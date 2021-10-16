@@ -1,0 +1,217 @@
+.s1 {
+  width: 82.8%;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+.author-img {
+  object-fit: cover;
+}
+
+.s1-cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.author-name {
+  font-family: Merriweather;
+  font-size: 48px;
+  color: #000000;
+}
+
+.author-title {
+  width: 333px;
+
+  font-family: Montserrat;
+  font-size: 32px;
+  color: #579275;
+
+  margin-top: 20px;
+}
+
+.author-quote-img {
+  margin-top: 70px;
+}
+
+.author-quote {
+  width: 450px;
+
+  font-family: Montserrat;
+  font-style: italic;
+  font-size: 36px;
+  line-height: 44px;
+  margin-top: 40px;
+
+  color: #494949;
+}
+
+/* SECTION 2 */
+
+.s2 {
+  width: 82.8%;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-title {
+  font-family: Merriweather;
+  font-size: 48px;
+  line-height: 60px;
+
+  color: #000000;
+}
+
+.section-line {
+  width: 60%;
+  height: 7px;
+  background: #81b29a;
+
+  border: solid #81b29a;
+}
+
+.section-text {
+  width: 90%;
+
+  font-family: Karla;
+  font-size: 32px;
+  line-height: 37px;
+  margin-top: 50px;
+
+  color: #000000;
+}
+
+.btm-section {
+  margin-top: 70px;
+}
+
+.sl-btm {
+  width: 40%;
+}
+
+.s2-btn {
+  width: 330px;
+  height: 65px;
+
+  background: #e07a5f;
+  border-radius: 3px;
+  border: none;
+  margin-top: 70px;
+  cursor: pointer;
+
+  font-family: Karla;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #ffffff;
+}
+
+@media screen and (max-width: 900px) {
+  .author-img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+  }
+
+  .section-title {
+    font-family: Merriweather;
+    font-size: 32px;
+    line-height: 60px;
+
+    color: #000000;
+  }
+
+  .section-line {
+    width: 50%;
+    height: 7px;
+    background: #81b29a;
+
+    border: solid #81b29a;
+  }
+
+  .section-text {
+    font-family: Karla;
+    font-size: 24px;
+    line-height: 37px;
+    margin-top: 50px;
+
+    color: #000000;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .s1-cont {
+    flex-direction: column-reverse;
+  }
+
+  .author-name {
+    margin-top: 50px;
+    font-family: Merriweather;
+    font-size: 36px;
+    color: #000000;
+  }
+
+  .author-title {
+    width: 333px;
+
+    font-family: Montserrat;
+    font-size: 24px;
+    color: #579275;
+
+    margin-top: 20px;
+  }
+
+  .author-quote-img {
+    margin-top: 70px;
+    width: 75px;
+    height: 80px;
+  }
+
+  .author-quote {
+    width: 250px;
+
+    font-family: Montserrat;
+    font-style: italic;
+    font-size: 24px;
+    line-height: 44px;
+    margin-top: 40px;
+
+    color: #494949;
+  }
+
+  .author {
+    width: 100%;
+  }
+
+  .section-line {
+    display: none;
+  }
+
+  .section-title,
+  .section-text {
+    text-align: center;
+  }
+
+  .top-section {
+    justify-content: center;
+  }
+
+  .section-text {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .s2-btn {
+    width: 95%;
+    font-size: 32px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

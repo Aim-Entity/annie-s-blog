@@ -20,9 +20,9 @@
       <div class="navigation">
         <ul class="nav-links">
           <a href="{% url 'index' %}"><li class="home">HOME</li></a>
-          <a href=""><li class="about">ABOUT US</li></a>
+          <a href="{% url 'about' %}"><li class="about">ABOUT US</li></a>
           <a href="{% url 'blog' %}"><li class="blog">BLOG</li></a>
-          <a href=""><li class="contact">CONTACT</li></a>
+          <a href="{% url 'contact' %}"><li class="contact">CONTACT</li></a>
         </ul>
 
         <ul class="nav-socials">
@@ -35,9 +35,9 @@
       <div class="nav-dropdown">
         <div>
           <a href="{% url 'index' %}"><li class="home">HOME</li></a>
-          <a href=""><li class="about">ABOUT US</li></a>
+          <a href="{% url 'about' %}"><li class="about">ABOUT US</li></a>
           <a href="{% url 'blog' %}"><li class="blog">BLOG</li></a>
-          <a href=""><li class="contact">CONTACT</li></a>
+          <a href="{% url 'contact' %}"><li class="contact">CONTACT</li></a>
 
           <div class="p-nav-socials">
           <a href=""><img src="{% static 'base/imgs/twitter.svg' %}" alt="Twitter" class="twitter"></a>

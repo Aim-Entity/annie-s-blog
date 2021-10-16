@@ -1,26 +1,47 @@
-.contact-form {
-  width: 600px;
-  height: 900px;
+.s1 {
+  width: 83%;
+  height: fit-content;
+  display: flex;
   margin: 0 auto;
-  margin-top: 115px;
-
-  background: #eaeaea;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
+  margin-top: 200px;
 }
 
-.form-title {
-  width: 100%;
-  text-align: center;
-  padding-top: 45px;
-  margin-bottom: 50px;
+.contact-title {
+  width: 553px;
 
-  font-weight: 500;
+  font-family: Merriweather;
+  font-weight: 400;
   font-size: 36px;
-  line-height: 44px;
-  /* identical to box height */
 
   color: #000000;
+}
+
+.contact-text {
+  width: 485px;
+
+  font-family: Montserrat;
+  font-size: 30px;
+  line-height: 31px;
+  letter-spacing: 0.085em;
+  margin-top: 25px;
+
+  color: #000000;
+}
+
+.contact-detail li {
+  width: 418px;
+
+  font-family: Montserrat;
+  font-size: 24px;
+  line-height: 31px;
+  letter-spacing: 0.085em;
+  margin-top: 35px;
+
+  color: #000000;
+}
+
+.contact-form {
+  width: 600px;
 }
 
 form {
@@ -34,7 +55,7 @@ form {
 }
 
 form label {
-  margin-top: 28px;
+  /* margin-top: 28px; */
   font-size: 24px;
   line-height: 29px;
 
@@ -43,10 +64,11 @@ form label {
 
 form input {
   margin-top: 15px;
+  margin-bottom: 30px;
 
   height: 50px;
 
-  border: 1.5px solid #d1d1d1;
+  border: 2px solid #81b29a;
   border-radius: 2px;
 
   padding-left: 20px;
@@ -65,6 +87,8 @@ form input {
   padding-left: 20px;
   padding-top: 20px;
   font-size: 18px;
+  margin-bottom: 30px;
+  border: 2px solid #81b29a;
 
   font-family: "poppins";
 }
@@ -73,7 +97,7 @@ form input {
   height: 60px;
   margin-top: 40px;
 
-  background: #9d002a;
+  background: #81b29a;
   border-radius: 3px;
   border: none;
 
@@ -85,15 +109,55 @@ form input {
 }
 
 @media screen and (max-width: 720px) {
+  .s1 {
+    flex-direction: column;
+  }
+
+  .contact-title {
+    width: 85%;
+
+    font-family: Merriweather;
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0 auto;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .contact-text {
+    width: 85%;
+
+    font-family: Montserrat;
+    font-size: 21px;
+    line-height: 31px;
+    letter-spacing: 0.085em;
+    margin: 0 auto;
+    margin-top: 25px;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .contact-detail li {
+    width: 80%;
+
+    font-family: Montserrat;
+    font-size: 18px;
+    line-height: 31px;
+    letter-spacing: 0.085em;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 35px;
+
+    color: #000000;
+  }
+
   .contact-form {
     width: 300px;
     height: 850px;
     margin: 0 auto;
     margin-top: 115px;
-
-    background: #eaeaea;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
   }
 
   form input {
@@ -101,7 +165,7 @@ form input {
 
     height: 50px;
 
-    border: 1.5px solid #d1d1d1;
+    border: 2px solid #81b29a;
     border-radius: 2px;
 
     padding-left: 20px;
@@ -122,10 +186,5 @@ form input {
     font-size: 18px;
 
     font-family: "poppins";
-  }
-
-  .form-title {
-    font-size: 24px;
-    margin-bottom: 10px;
   }
 }

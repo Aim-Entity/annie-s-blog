@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block head %}
+  <title>About Us</title>
+  <link rel="stylesheet" href="{% static 'about/about.css' %}">
+  {% endblock %}
+</head>
+<body>
+  {% block content %}
+    <div class="container">
+      <div class="s1">
+        <div class="s1-cont">
+          <div class="author">
+            <h2 class="author-name">Annie</h2>
+            <h3 class="author-title">Fulltime Blogger</h3>
+
+            <img src="{% static 'about/imgs/quote.svg' %}" alt="Quote" class="author-quote-img">
+
+            <p class="author-quote">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum</p>
+          </div>
+
+          <img src="{% static 'about/imgs/author.png' %}" alt="Author" class="author-img">
+        </div>
+      </div>
+
+      <div class="s2">
+        <div class="s2-section">
+          <div class="top-section">
+            <h2 class="section-title">01 - About Me</h2>
+            <hr class="section-line">
+          </div>
+
+          <p class="section-text">et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec.</p>
+        </div>
+
+        <div class="s2-section btm-section">
+          <div class="top-section">
+            <h2 class="section-title">02 - About This Blog</h2>
+            <hr class="section-line sl-btm">
+          </div>
+
+          <p class="section-text">et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec.</p>
+        </div>
+
+        <a href="{% url 'blog' %}"><button class="btn s2-btn">Read Blogs</button></a>
+      </div>
+    </div>
+  {% endblock %}
+</body>
+</html>

@@ -103,7 +103,7 @@ footer {
   height: 132px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding-right: 35px;
 }
 
