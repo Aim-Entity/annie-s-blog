@@ -65,37 +65,17 @@
     <div class="s2">
       <div class="blogs">
         <!-- Blog 1 -->
+        {% for blog in top %}
         <div class="blog">
-          <img src="{% static 'home/imgs/food.png' %}" alt="Blog" class="blog-img">
+          <img src="{{ blog.blog.thumbnail.url }}" alt="Blog" class="blog-img">
 
-          <h2 class="blog-title">tristique nulla aliquet enim tortor at auctor</h2>
+          <h2 class="blog-title">{{ blog.blog.title }}</h2>
 
-          <p class="blog-text">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum, morbi tempus urna nisl mollis sed erat, integer blandit.</p>
+          <p class="blog-text">{{ blog.blog.thumbnail_text }}</p>
 
-          <a href="" class="blog-link">Read More</a>
+          <a href="{% url 'blog-detail' blog.blog.slug %}" class="blog-link">Read More</a>
         </div>
-
-        <!-- Blog 2 -->
-        <div class="blog">
-          <img src="{% static 'home/imgs/food.png' %}" alt="Blog" class="blog-img">
-
-          <h2 class="blog-title">tristique nulla aliquet enim tortor at auctor</h2>
-
-          <p class="blog-text">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum, morbi tempus urna nisl mollis sed erat, integer blandit.</p>
-
-          <a href="" class="blog-link">Read More</a>
-        </div>
-
-        <!-- Blog 3 -->
-        <div class="blog">
-          <img src="{% static 'home/imgs/food.png' %}" alt="Blog" class="blog-img">
-
-          <h2 class="blog-title">tristique nulla aliquet enim tortor at auctor</h2>
-
-          <p class="blog-text">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum, morbi tempus urna nisl mollis sed erat, integer blandit.</p>
-
-          <a href="" class="blog-link">Read More</a>
-        </div>
+        {% endfor %}
       </div>
 
       <button class="s2-btn">More Blogs</button>
@@ -118,45 +98,17 @@
     <div class="s4">
       <div class="bottom-blog">
         <div class="l-blog">
+          {% for blog in blogs %}
           <div class="blog">
-            <img src="{% static 'home/imgs/food.png' %}" alt="Blog" class="blog-img">
+            <img src="{{ blog.thumbnail.url }}" alt="Blog" class="blog-img">
   
-            <h2 class="blog-title">tristique nulla aliquet enim tortor at auctor</h2>
+            <h2 class="blog-title">{{ blog.title }}</h2>
   
-            <p class="blog-text">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum, morbi tempus urna nisl mollis sed erat, integer blandit.</p>
+            <p class="blog-text">{{ blog.thumbnail_text }}</p>
   
-            <a href="" class="blog-link">Read More</a>
+            <a href="{% url 'blog-detail' blog.slug %}" class="blog-link">Read More</a>
           </div>
-
-          <div class="blog blog-right">
-            <img src="{% static 'home/imgs/food.png' %}" alt="Blog" class="blog-img">
-  
-            <h2 class="blog-title">tristique nulla aliquet enim tortor at auctor</h2>
-  
-            <p class="blog-text">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum, morbi tempus urna nisl mollis sed erat, integer blandit.</p>
-  
-            <a href="" class="blog-link">Read More</a>
-          </div>
-
-          <div class="blog blog-bottom">
-            <img src="{% static 'home/imgs/food.png' %}" alt="Blog" class="blog-img">
-  
-            <h2 class="blog-title">tristique nulla aliquet enim tortor at auctor</h2>
-  
-            <p class="blog-text">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum, morbi tempus urna nisl mollis sed erat, integer blandit.</p>
-  
-            <a href="" class="blog-link">Read More</a>
-          </div>
-
-          <div class="blog blog-bottom blog-right">
-            <img src="{% static 'home/imgs/food.png' %}" alt="Blog" class="blog-img">
-  
-            <h2 class="blog-title">tristique nulla aliquet enim tortor at auctor</h2>
-  
-            <p class="blog-text">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum, morbi tempus urna nisl mollis sed erat, integer blandit.</p>
-  
-            <a href="" class="blog-link">Read More</a>
-          </div>
+          {% endfor %}
         </div>
 
         <div class="author-container">
@@ -174,20 +126,12 @@
           </div>
 
           <div class="mini-blogs">
+            {% for blog in favourite %}
             <div class="mini-blog">
-              <img src="{% static 'home/imgs/fish.png' %}" alt="mini blog" class="mb-img">
-              <i class="mb-text">tristique nulla aliquet enim tortor at auctor</i>
+              <img src="{{ blog.blog.thumbnail.url }}" alt="mini blog" class="mb-img">
+              <i class="mb-text">{{ blog.blog.title }}</i>
             </div>
-
-            <div class="mini-blog">
-              <img src="{% static 'home/imgs/fish.png' %}" alt="mini blog" class="mb-img">
-              <i class="mb-text">tristique nulla aliquet enim tortor at auctor</i>
-            </div>
-
-            <div class="mini-blog">
-              <img src="{% static 'home/imgs/fish.png' %}" alt="mini blog" class="mb-img">
-              <i class="mb-text">tristique nulla aliquet enim tortor at auctor</i>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -216,5 +160,12 @@
   </div>
 
   <script src="{% static 'base/base.js' %}"></script>
+
+  <script>
+    let blogs = document.querySelectorAll(".l-blog .blog");
+
+    blogs[2].style.marginTop = "50px"
+    blogs[3].style.marginTop = "50px"
+  </script>
 </body>
 </html>
