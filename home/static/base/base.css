@@ -21,7 +21,7 @@ a {
   height: 100px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   background: #81b29a;
@@ -33,7 +33,7 @@ a {
   width: 580px;
 
   list-style: none;
-  margin-left: 8.6%;
+  /* margin-left: 8.6%; */
 }
 
 .nav-links a {
@@ -125,7 +125,7 @@ footer p {
 }
 
 .socials {
-  width: 190px;
+  width: 290px;
   display: flex;
   justify-content: space-between;
 }
