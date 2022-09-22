@@ -39,6 +39,48 @@
           <p class="blog-par bp-3">{{ object.par3 }}</p>
         {% endif %}
       </div>
+
+      <div class="s2">
+        <div class="bottom-blog">
+          <div class="l-blog">
+            {% for blog in object_list %}
+            <div class="blog">
+              <img src="{{ blog.thumbnail.url }}" alt="Blog" class="blog-img">
+    
+              <h2 class="blog-title">{{ blog.title }}</h2>
+    
+              <p class="blog-text">{{ blog.thumbnail_text }}</p>
+    
+              <a href="{% url 'blog-detail' blog.slug %}" class="blog-link">Read More</a>
+            </div>
+            {% endfor %}
+          </div>
+  
+          <div class="author-container">
+            <img src="{% static 'home/imgs/author.png' %}" alt="Author" class="author-img">
+  
+            <h3 class="author-name">Annie's World</h3>
+            <h3 class="author-title">FULLTIME BLOGGER</h3>
+  
+            <p class="author-text">Taciti ligula arcu himenaeos nec augue lectus aliquet rutrum</p>
+  
+  
+            <div class="author-sub">
+              <p class="au-title">My Personal Favourites</p>
+              <hr class="au-line">
+            </div>
+  
+            <div class="mini-blogs">
+              {% for blog in favourite %}
+              <div class="mini-blog">
+                <img src="{{ blog.blog.thumbnail.url }}" alt="mini blog" class="mb-img">
+                <i class="mb-text">{{ blog.blog.title }}</i>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

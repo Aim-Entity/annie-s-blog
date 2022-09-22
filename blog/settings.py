@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'home',
     'blog_list',
     'contact',
-    'rest_framework'
+    'rest_framework',
+    'captcha'
 ]
 
 MIDDLEWARE = [
