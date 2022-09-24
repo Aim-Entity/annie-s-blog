@@ -12,10 +12,19 @@ class Blog(models.Model):
     views = models.IntegerField(default=0)
 
     par1 = models.CharField(max_length=30000)
-    par2 = models.CharField(max_length=30000)
+    par2 = models.CharField(max_length=30000, null=True, blank=True)
 
     image2 = models.ImageField(upload_to="blogs", null=True, blank=True)
     par3 = models.CharField(max_length=10000, null=True, blank=True)
 
     def __str__(self):
         return f"{self.title} | {self.date}"
+
+class Comment(models.Model):
+    user = models.CharField(max_length=200, blank=True, null=True)
+    comment = models.TextField(max_length=7000)
+    
+    date = models.DateField(auto_now=True)
+    likes = models.IntegerField()
+    
+    blog = models.ForeignKey(Blog, related_name="comments", on_delete=models.CASCADE)

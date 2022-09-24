@@ -78,7 +78,7 @@
   width: 328px;
 
   font-family: Karla;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 28px;
 
   color: #494949;
@@ -168,7 +168,7 @@
   color: #000000;
 }
 
-.product {
+.product-image-cont {
   width: 284px;
   height: 365px;
 }
@@ -176,6 +176,10 @@
 .product-image {
   position: absolute;
   z-index: -1;
+
+  width: 284px;
+  height: 365px;
+  object-fit: cover;
 }
 
 .affiliate-btn {
@@ -206,6 +210,30 @@
   margin-top: 80px;
   display: flex;
   justify-content: space-between;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 20px;
+}
+
+.product-price, .product-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.product-sub-title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #6B6B6B;
+
+  margin-top: 14px;
 }
 
 /* Tablet */
