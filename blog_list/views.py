@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
+from django.views.generic.edit import FormMixin
 from .models import Blog
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from django.urls import reverse
 
+from .forms import CommentForm
 
 class BlogListView(ListView):
     template_name = "blog/blogs.html"
@@ -21,6 +24,27 @@ def update_views(request):
     return Response({})
 
 
-class BlogDetailView(DetailView):
+class BlogDetailView(FormMixin, DetailView):
     template_name = "blog/blog_detail.html"
     queryset = Blog.objects.all()
+    form_class = CommentForm
+    
+    def get_success_url(self):
+        return reverse('post_detail', kwargs={'pk': self.object.id})
+
+    def get_context_data(self, **kwargs):
+        context = super(BlogDetailView, self).get_context_data(**kwargs)
+        context['form'] = CommentForm(initial={'post': self.object})
+        return context
+    
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        form.save()
+        return super(BlogDetailView, self).form_valid(form)

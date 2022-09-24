@@ -1,8 +1,7 @@
 from django import forms
-from .models import Contact
-from captcha.fields import CaptchaField
+from .models import Comment
 
-class ContactForm(forms.ModelForm):
+class CommentForm(forms.ModelForm):
     user = forms.CharField(widget=forms.TextInput(
         attrs={'class': 'user forms'}), label='user')
 
@@ -10,5 +9,5 @@ class ContactForm(forms.ModelForm):
                               (attrs={'class': 'comment forms'}), label='comment')
 
     class Meta:
-        model = Contact
+        model = Comment
         fields = ("user", "comment")
