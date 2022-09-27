@@ -3,7 +3,7 @@
   height: fit-content;
   display: flex;
   margin: 0 auto;
-  margin-top: 200px;
+  margin-top: 70px;
 }
 
 .contact-title {
@@ -106,6 +106,29 @@ form input {
   color: #ffffff;
 
   cursor: pointer;
+}
+
+.pag {
+  width: 25px;
+  height: 25px;
+  background: #81b29a;
+  border: 2px #81b29a solid;
+  border-radius: 300px;
+
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  width: 60px;
+  justify-content: space-between;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pag2 {
+  background: none;
 }
 
 @media screen and (max-width: 720px) {

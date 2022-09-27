@@ -1,11 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import FormMixin
 from .models import Blog
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.urls import reverse
+from django.http import HttpResponse
 
+from .models import Test, Comment
 from .forms import CommentForm
 
 class BlogListView(ListView):
@@ -23,6 +25,21 @@ def update_views(request):
 
     return Response({})
 
+def create(request):
+    if request.method == "POST":
+        user = request.POST.get('user', False)
+        message = request.POST.get('message', False)
+        slug = request.POST.get('slug', False)
+        
+        blog = Blog.objects.get(slug=slug)
+        
+        new_comment = Comment(user=user, comment=message, likes=0, blog=blog)
+        new_comment.save()
+        
+        success = "Comment created successfully"
+    
+        return HttpResponse(success)
+        # return render(request, "create/create.html")
 
 class BlogDetailView(FormMixin, DetailView):
     template_name = "blog/blog_detail.html"

@@ -27,11 +27,18 @@
           <form method="POST"> {% csrf_token %}
             {{ form }}
 
+            <div class="pagination">
+              <div class="pag1 pag"></div>
+              <div class="pag2 pag"></div>
+            </div>
+
             <button type="submit" class="submit">Send</button>
           </form>
         </div>
       </div>
     </div>
+
+    <script src="{% static 'contact/contact.js' %}"></script>
   {% endblock %}
 </body>
 </html>

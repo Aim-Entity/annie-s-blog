@@ -28,3 +28,10 @@ class Comment(models.Model):
     likes = models.IntegerField()
     
     blog = models.ForeignKey(Blog, related_name="comments", on_delete=models.CASCADE)
+    
+class Test(models.Model):
+  user = models.CharField(max_length=300, blank=True, null=True)
+  comment = models.TextField(max_length=1000)
+  
+  def __str__(self):
+    return self.user
