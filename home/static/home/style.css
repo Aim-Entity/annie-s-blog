@@ -96,14 +96,28 @@
 }
 
 .blogs {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
+}
+
+.blog-cont-remove {
+  display: none;
+}
+
+.blog-cont-hidden {
+  margin-top: 40px;
+  opacity: 0;
+}
+
+.blog-cont {
+  margin-top: 40px;
 }
 
 .s2 {
   width: 82.8%;
   margin: 0 auto;
-  margin-top: 140px;
+  margin-top: 40px;
 }
 
 .s2-btn {
@@ -324,7 +338,7 @@
     flex-direction: column;
     justify-items: center;
 
-    height: 2000px;
+    /* height: 2000px; */
   }
 
   .blog-img {

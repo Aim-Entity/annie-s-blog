@@ -12,6 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Merriweather&family=Montserrat&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'home/style.css' %}">
   <link rel="stylesheet" href="{% static 'base/base.css' %}">
+
+  <meta name="description" content="Annie's world gives you an insight to my personal life so you can get to know me better. Red through my blogs to get a better understanding of Bangladesh. There are also some products that I offer that you may be interested in.">
+  <meta name="keywords" content="Personal blog, know me, products, bangladesh">
+  <meta name="author" content="Annie">
 </head>
 <body>
   <div class="container">
@@ -55,8 +59,9 @@
       <div class="hero-section">
         <img src="{% static 'home/imgs/lake.png' %}" alt="Lake" class="hero">
 
-        <h1 class="hero-title">Annie’s World</h1>
-        <h3 class="hero-sub">My Personal Blog On Bangladesh</h3>
+        <!-- <h1 class="hero-title">Annie’s World</h1> -->
+        <img src="{% static 'home/imgs/hero.png' %}" alt="Hero" style="width: 20%; margin-top: 50px; position: relative; left: 50%; transform: translateX(-50%);">
+        <h3 class="hero-sub">My Personal Blog On ...</h3>
 
         <hr class="hero-line">
       </div>
@@ -66,7 +71,7 @@
       <div class="blogs">
         <!-- Blog 1 -->
         {% for blog in top %}
-        <div class="blog">
+        <div class="blog-cont">
           <img src="{{ blog.blog.thumbnail.url }}" alt="Blog" class="blog-img">
 
           <h2 class="blog-title">{{ blog.blog.title }}</h2>
@@ -141,6 +146,7 @@
   </div>
 
   <script src="{% static 'base/base.js' %}"></script>
+  <script src="{% static 'home/home.js' %}"></script>
 
   <script>
     let blogs = document.querySelectorAll(".l-blog .blog");

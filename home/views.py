@@ -7,7 +7,7 @@ from blog_list.models import Blog
 def index(request):
     blogs = Blog.objects.all()[:4]
     favouriteBlog = FavouriteBlog.objects.all()[:3]
-    topBlog = TopBlog.objects.all()[:3]
+    topBlog = TopBlog.objects.all()[:6]
     products = AffiliateProduct.objects.all()[:3]
     
     context = {
