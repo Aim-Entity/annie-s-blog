@@ -186,7 +186,8 @@
   }
 
   .author {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .section-line {
@@ -210,6 +211,12 @@
   .s2-btn {
     width: 95%;
     font-size: 32px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .author-img {
     position: relative;
     left: 50%;
     transform: translateX(-50%);

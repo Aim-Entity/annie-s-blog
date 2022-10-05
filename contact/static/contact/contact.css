@@ -178,7 +178,7 @@ form input {
 
   .contact-form {
     width: 300px;
-    height: 850px;
+    /* height: 850px; */
     margin: 0 auto;
     margin-top: 115px;
   }
