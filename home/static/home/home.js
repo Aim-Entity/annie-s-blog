@@ -15,32 +15,27 @@ function returnHiddenBlogs(){
 }
 
 function loadBlogs() {
-  let HiddenBlogs = returnHiddenBlogs();
+  let HiddenBlogs = document.querySelector(".hidden-blogs");
 
   let loadBtn = document.querySelector(".s2-btn");
 
-  for(let i = 0; i < HiddenBlogs.length; i++) {
-    HiddenBlogs[i].classList.toggle("blog-cont-remove");
-    HiddenBlogs[i].classList.toggle("blog-cont-hidden");
+  // for(let i = 0; i < HiddenBlogs.length; i++) {
+  //   HiddenBlogs[i].classList.toggle("blog-cont-remove");
+  //   HiddenBlogs[i].classList.toggle("blog-cont-hidden");
 
-    HiddenBlogs[i].classList.toggle("blog-cont");
+  //   HiddenBlogs[i].classList.toggle("blog-cont");
 
-    loadBtn.innerHTML = "More Blogs";
-  };
+  //   loadBtn.innerHTML = "More Blogs";
+  // };
 
   loadBtn.addEventListener("click", e => {
-    for(let i = 0; i < HiddenBlogs.length; i++) {
-      HiddenBlogs[i].classList.toggle("blog-cont-remove");
-      HiddenBlogs[i].classList.toggle("blog-cont-hidden");
-  
-      HiddenBlogs[i].classList.toggle("blog-cont");
+    HiddenBlogs.classList.toggle("hidden-blogs");
 
-      if(loadBtn.innerHTML == "More Blogs") {
-        loadBtn.innerHTML = "Less Blogs";
-      }
-      else{
-        loadBtn.innerHTML = "More Blogs";
-      };
+    if(loadBtn.innerHTML == "More Blogs") {
+      loadBtn.innerHTML = "Less Blogs";
+    }
+    else{
+      loadBtn.innerHTML = "More Blogs";
     };
   });
 };

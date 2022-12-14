@@ -16,22 +16,17 @@ class Blog(models.Model):
 
     image2 = models.ImageField(upload_to="blogs", null=True, blank=True)
     par3 = models.CharField(max_length=10000, null=True, blank=True)
+    
+    enable_comment = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.title} | {self.date}"
 
 class Comment(models.Model):
     user = models.CharField(max_length=200, blank=True, null=True)
-    comment = models.TextField(max_length=7000)
+    comment = models.TextField(max_length=1000)
     
     date = models.DateField(auto_now=True)
     likes = models.IntegerField()
     
     blog = models.ForeignKey(Blog, related_name="comments", on_delete=models.CASCADE)
-    
-class Test(models.Model):
-  user = models.CharField(max_length=300, blank=True, null=True)
-  comment = models.TextField(max_length=1000)
-  
-  def __str__(self):
-    return self.user

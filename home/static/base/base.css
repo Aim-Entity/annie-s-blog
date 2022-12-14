@@ -41,6 +41,10 @@ a {
   font-size: 24px;
 }
 
+.nav-links a li {
+  font-family: "Courgette";
+}
+
 .nav-socials {
   width: 225px;
   display: flex;

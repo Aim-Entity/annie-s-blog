@@ -29,7 +29,9 @@
         </div>
 
         <p class="blog-par">{{ object.par1 }}</p>
+        {% if object.par2 %}
         <p class="blog-par bp-2">{{ object.par2 }}</p>
+        {% endif %}
 
         {% if object.image2 %}
           <img src="{{ object.image2.url }}" alt="Image 2" class="blog-image-2">
@@ -40,6 +42,7 @@
         {% endif %}
       </div>
 
+      {% if object.enable_comment %}
       <div class="s2">
         <h3 class="s2-title">Comments</h3>
 
@@ -76,6 +79,7 @@
         </div>
         {% endfor %}
       </div>
+      {% endif %}
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

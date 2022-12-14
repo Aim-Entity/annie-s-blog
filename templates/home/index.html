@@ -61,26 +61,45 @@
 
         <h1 class="hero-title">Annie’s World</h1>
         <!-- <img src="{% static 'home/imgs/hero.png' %}" alt="Hero" style="width: 20%; margin-top: 50px; position: relative; left: 50%; transform: translateX(-50%);"> -->
-        <h3 class="hero-sub">My Personal Blog On ...</h3>
+        <!-- <h3 class="hero-sub">My Personal Blog On ...</h3> -->
 
         <hr class="hero-line">
       </div>
     </div>
 
     <div class="s2">
+      <!-- <h2 class="blogs-title">Recent Blogs</h2> -->
+      <h2 class="blogs-title">Recent Blogs</h2>
       <div class="blogs">
         <!-- Blog 1 -->
-        {% for blog in top %}
+        {% for blog in recent %}
         <div class="blog-cont">
-          <img src="{{ blog.blog.thumbnail.url }}" alt="Blog" class="blog-img">
+          <img src="{{ blog.thumbnail.url }}" alt="Blog" class="blog-img">
 
-          <h2 class="blog-title">{{ blog.blog.title }}</h2>
+          <h2 class="blog-title">{{ blog.title }}</h2>
 
-          <p class="blog-text">{{ blog.blog.thumbnail_text }}</p>
+          <p class="blog-text">{{ blog.thumbnail_text }}</p>
 
-          <a href="{% url 'blog-detail' blog.blog.slug %}" class="blog-link">Read More</a>
+          <a href="{% url 'blog-detail' blog.slug %}" class="blog-link">Read More</a>
         </div>
         {% endfor %}
+      </div>
+
+      <div class="hidden-blogs">
+        <h2 class="blogs-title">Top Blogs</h2>
+        <div class="blogs">
+          {% for blog in top %}
+          <div class="blog-cont">
+            <img src="{{ blog.blog.thumbnail.url }}" alt="Blog" class="blog-img">
+
+            <h2 class="blog-title">{{ blog.blog.title }}</h2>
+
+            <p class="blog-text">{{ blog.blog.thumbnail_text }}</p>
+
+            <a href="{% url 'blog-detail' blog.blog.slug %}" class="blog-link">Read More</a>
+          </div>
+          {% endfor %}
+        </div>  
       </div>
 
       <button class="s2-btn">More Blogs</button>
@@ -134,14 +153,14 @@
         </div>
       </div>
 
-      <div class="right-footer">
+      <!-- <div class="right-footer">
         <div class="socials">
           <a href="" target="_blank"><img src="{% static 'base/imgs/twitter.svg' %}" alt="FB" class="facebook"></a>
           <a href="" target="_blank"><img src="{% static 'base/imgs/youtube.svg' %}" alt="twitter" class="twitter"></a>
           <a href="" target="_blank"><img src="{% static 'base/imgs/insta.svg' %}" alt="instagram" class="instagram"></a>
           <a href="" target="_blank"><img src="{% static 'base/imgs/facebook.svg' %}" alt="facebook" class="facebook"></a>
         </div>
-      </div>
+      </div> -->
     </footer>
   </div>
 

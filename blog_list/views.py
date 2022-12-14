@@ -7,7 +7,7 @@ from rest_framework.decorators import api_view
 from django.urls import reverse
 from django.http import HttpResponse
 
-from .models import Test, Comment
+from .models import Comment
 from .forms import CommentForm
 
 class BlogListView(ListView):

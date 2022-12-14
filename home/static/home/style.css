@@ -251,6 +251,15 @@
   margin-top: 14px;
 }
 
+.blogs-title {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.hidden-blogs {
+  display: none;
+}
+
 /* Tablet */
 
 @media screen and (max-width: 1020px) {
